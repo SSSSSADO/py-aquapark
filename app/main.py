@@ -49,12 +49,16 @@ class AdultSlideLimitationValidator(SlideLimitationValidator):
 
 
 class Slide:
+    limitation_class: type[SlideLimitationValidator]
+
     def __init__(self,
                  name: str,
                  limitation_class: type[SlideLimitationValidator]
                  ) -> None:
         self.name = name
-        self.limitation_class = limitation_class
+        self.limitation_class: type[
+            SlideLimitationValidator
+        ] = limitation_class
 
     def can_access(self, visitor: Visitor) -> bool:
         try:
