@@ -22,11 +22,18 @@ class IntegerRange:
 
 
 class Visitor:
-   pass
+   def __init__(self, name: str, age: int, weight: int, height: int) -> None:
+      self.name = name
+      self.age = age
+      self.weight = weight
+      self.height = height
 
 
 class SlideLimitationValidator(ABC):
-    pass
+    def __init__(self, age: int, weight: int, height: int) -> None:
+        self.age = age
+        self.weight = weight
+        self.height = height
 
 
 class ChildrenSlideLimitationValidator(SlideLimitationValidator):
