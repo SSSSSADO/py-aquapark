@@ -23,10 +23,10 @@ class IntegerRange:
 
 class Visitor:
    def __init__(self, name: str, age: int, weight: int, height: int) -> None:
-      self.name = name
-      self.age = age
-      self.weight = weight
-      self.height = height
+        self.name = name
+        self.age = age
+        self.weight = weight
+        self.height = height
 
 
 class SlideLimitationValidator(ABC):
@@ -59,6 +59,6 @@ class Slide:
     def can_access(self, visitor: Visitor) -> bool:
         try:
             self.limitation_class(visitor.age, visitor.weight, visitor.height)
-        except(ValueError, TypeError):
+        except (ValueError, TypeError):
             return False
         return True
